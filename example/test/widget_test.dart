@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:social_share_example/main.dart';
 
 void main() {
-  testWidgets('example exposes both migrated platforms', (tester) async {
+  testWidgets('example exposes both sharing platforms', (tester) async {
     await tester.pumpWidget(const ShareExampleApp());
     expect(find.text('Facebook'), findsOneWidget);
     expect(find.text('Line'), findsOneWidget);

@@ -1,5 +1,5 @@
 name: social_share_core
-description: Shared legacy API for the Social Share Bridge plugins.
+description: Shared API for the Social Share Bridge plugins.
 version: 0.0.1
 environment:
   sdk: ^3.10.9

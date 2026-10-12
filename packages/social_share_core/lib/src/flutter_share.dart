@@ -33,7 +33,7 @@ class FlutterShare {
     ShareModel shareModel, {
     Function(int?, String?)? result,
   }) {
-    // The original iOS dispatcher sends an omitted platform to LINE.
+    // Unspecified platforms are dispatched to LINE.
     final channel =
         _channels[shareModel.platform] ?? _channels[SharePlatform.Line]!;
     Future<dynamic> callback = channel.invokeMethod("share", {

@@ -27,7 +27,7 @@ class _SharePageState extends State<SharePage> {
   final _image = TextEditingController(
     text: 'https://www.baidu.com/img/bd_logo1.png',
   );
-  String _result = '等待调用。state=0 的含义沿用旧插件，不代表已确认发布。';
+  String _result = '等待调用。state=0 不代表已确认发布。';
 
   @override
   void dispose() {

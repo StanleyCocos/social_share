@@ -1,5 +1,5 @@
 name: social_share_line
-description: Legacy Line native sharing for Flutter.
+description: Line native sharing for Flutter.
 version: 0.0.1
 environment:
   sdk: ^3.10.9

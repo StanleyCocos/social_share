@@ -64,7 +64,7 @@ void main() {
     }
   }
   test(
-    'omitted platform preserves the original iOS LINE dispatch payload',
+    'omitted platform preserves the iOS LINE dispatch payload',
     () async {
       messenger.setMockMethodCallHandler(line, (call) async {
         expect(call.arguments, {
@@ -81,7 +81,7 @@ void main() {
     },
   );
   test(
-    'LINE-only integration can read the legacy iOS platform version',
+    'LINE-only integration can read the iOS platform version',
     () async {
       messenger.setMockMethodCallHandler(line, (call) async {
         expect(call.method, 'getPlatformVersion');
@@ -90,7 +90,7 @@ void main() {
       expect(await FlutterShare.platformVersion, 'iOS 15.6');
     },
   );
-  test('platform version preserves the legacy getter', () async {
+  test('platform version preserves the public getter', () async {
     messenger.setMockMethodCallHandler(facebook, (call) async {
       expect(call.method, 'getPlatformVersion');
       return 'iOS 15.6';

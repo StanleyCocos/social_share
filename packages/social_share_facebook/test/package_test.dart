@@ -5,7 +5,7 @@ import 'package:social_share_facebook/social_share_facebook.dart';
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   test(
-    'platform import exports the legacy API and routes to its own channel',
+    'platform import exports the public API and routes to its own channel',
     () async {
       const channel = MethodChannel('social_share_facebook');
       final messenger =

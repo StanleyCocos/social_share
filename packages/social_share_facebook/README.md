@@ -1,8 +1,8 @@
 # social_share_facebook
 
-从 [flutter_share 指定提交](https://github.com/StanleyCocos/flutter_share/tree/48debc8f1dce843954b8613095af1ac950d3918b) 迁移的 Facebook 分享插件。
+Facebook Android / iOS 原生分享插件，可独立依赖和发布。
 
-支持 Android / iOS。最低 Flutter 3.38.10、Dart 3.10.9；Android 插件声明 minSdk 16（与源提交一致，宿主 App 仍需满足 Flutter 自身的系统要求），iOS 15.6。
+支持 Android / iOS。最低 Flutter 3.38.10、Dart 3.10.9；Android 插件声明 minSdk 16（宿主 App 仍需满足 Flutter 自身的系统要求），iOS 15.6。
 
 ## 依赖和用法
 
@@ -29,7 +29,7 @@ await FlutterShare.share(
     // 单图时保持 text 为空，设置 image 为网络 URL 或本地路径。
   ),
   result: (state, msg) {
-    // 沿用旧格式：0 成功、1 失败、2 取消。
+    // 返回格式：0 成功、1 失败、2 取消。
   },
 );
 ```
@@ -42,7 +42,7 @@ Android `facebook-share:12.0.0`；iOS `FBSDKShareKit ~> 18.0`、`FBSDKCoreKit ~>
 
 ## iOS 配置
 
-业务 App 的 Info.plist 沿用原配置：
+业务 App 的 Info.plist 配置：
 
 ```xml
 <key>FacebookAppID</key>
@@ -71,11 +71,11 @@ Android `facebook-share:12.0.0`；iOS `FBSDKShareKit ~> 18.0`、`FBSDKCoreKit ~>
 </array>
 ```
 
-Example 的 Info.plist 与 AppDelegate 使用原示例配置，没有新增授权、初始化或 URL 回调逻辑。请使用你现有 App 已验证的 Facebook 配置。
+Example 提供 Info.plist 与 AppDelegate 配置示例。业务接入请使用自己的 Facebook App ID 和对应原生配置。
 
 ## Android 配置
 
-业务 App Manifest 保留 Facebook App ID 与 ContentProvider 配置：
+业务 App Manifest 配置 Facebook App ID 与 ContentProvider：
 
 ```xml
 <queries><package android:name="com.facebook.katana" /></queries>
@@ -87,18 +87,18 @@ Example 的 Info.plist 与 AppDelegate 使用原示例配置，没有新增授�
     android:exported="true" />
 ```
 
-在 strings.xml 定义 `facebook_app_id`。Example 沿用原示例 App ID，业务集成请保留自己的既有 ID。
+在 strings.xml 定义 `facebook_app_id`。Example 使用示例 App ID，业务集成请配置自己的 ID。
 
 插件 Manifest 自带 INTERNET、WebView Activity 和 FileProvider。FileProvider authority 已独立为 `${applicationId}.social_share_facebook.fileprovider`，仍只覆盖缓存目录。
 
 ## 结果与限制
 
-参数、SDK 回调、图片处理、网页兜底全部沿用源提交。state=0 可能只表示打开成功，不能统一理解为发布成功。此版本没有新增能力查询或安装状态查询 API。
+各平台分别处理参数、SDK 回调、图片和网页兜底。state=0 可能只表示打开成功，不能统一理解为发布成功。此版本没有新增能力查询或安装状态查询 API。
 
-Android SDK 返回成功 / 取消 / 错误。Android 网页兜底不完成原 Channel 返回。iOS 保留 Native / Browser / Web / 外部网页兜底顺序。
+Android SDK 返回成功 / 取消 / 错误。Android 网页兜底不会完成 Channel 返回。iOS 按 Native / Browser / Web / 外部网页顺序尝试兜底。
 
-完整迁移边界与保留限制见仓库 `docs/migration.md`。需要在 iOS / Android 真机以及官方 App 安装和未安装场景下验证。
+完整实现说明与平台限制见仓库 `docs/implementation.md`。需要在 iOS / Android 真机以及官方 App 安装和未安装场景下验证。
 
 ## 官方参考
 
-[Facebook iOS Sharing](https://developers.facebook.com/docs/sharing/ios/)、[Facebook Android Sharing](https://developers.facebook.com/docs/sharing/android/)。第一版按指定提交迁移，未根据最新官方能力改写实现。
+[Facebook iOS Sharing](https://developers.facebook.com/docs/sharing/ios/)、[Facebook Android Sharing](https://developers.facebook.com/docs/sharing/android/)。
