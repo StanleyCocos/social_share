@@ -1,0 +1,55 @@
+PODS:
+  - FBAEMKit (18.1.0):
+    - FBSDKCoreKit_Basics (= 18.1.0)
+  - FBSDKCoreKit (18.1.0):
+    - FBAEMKit (= 18.1.0)
+    - FBSDKCoreKit_Basics (= 18.1.0)
+  - FBSDKCoreKit_Basics (18.1.0)
+  - FBSDKShareKit (18.1.0):
+    - FBSDKCoreKit (= 18.1.0)
+  - Flutter (1.0.0)
+  - LineSDKSwift (5.17.0):
+    - LineSDKSwift/Core (= 5.17.0)
+  - LineSDKSwift/Core (5.17.0)
+  - social_share_facebook (0.0.1):
+    - FBSDKCoreKit (~> 18.0)
+    - FBSDKShareKit (~> 18.0)
+    - Flutter
+  - social_share_line (0.0.1):
+    - Flutter
+    - LineSDKSwift (~> 5.16)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - social_share_facebook (from `.symlinks/plugins/social_share_facebook/ios`)
+  - social_share_line (from `.symlinks/plugins/social_share_line/ios`)
+
+SPEC REPOS:
+  trunk:
+    - FBAEMKit
+    - FBSDKCoreKit
+    - FBSDKCoreKit_Basics
+    - FBSDKShareKit
+    - LineSDKSwift
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  social_share_facebook:
+    :path: ".symlinks/plugins/social_share_facebook/ios"
+  social_share_line:
+    :path: ".symlinks/plugins/social_share_line/ios"
+
+SPEC CHECKSUMS:
+  FBAEMKit: 64088ff0380f50e4a56e2ee07d984f7f1aef7595
+  FBSDKCoreKit: 8390ea3a8fac186f444275f31d7512e760b47cba
+  FBSDKCoreKit_Basics: 3a0005c78b355388bf2df5c6dbe6381b77ea4be3
+  FBSDKShareKit: e0893ca96a6e33f61385914a06ce2bd064a5dbdc
+  Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
+  LineSDKSwift: 93e306ec2316c2919852845cc3c53eab32a0e050
+  social_share_facebook: 6b734c21ac226c5782bf50b752bf3f82b5b863ae
+  social_share_line: ebd9987081c659fc29f25528d826e0e29aea43a6
+
+PODFILE CHECKSUM: c2a42e709f5eed067966862f788b9eaba06ae340
+
+COCOAPODS: 1.16.2

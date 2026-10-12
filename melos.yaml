@@ -1,0 +1,11 @@
+name: social_share_bridge
+packages:
+  - packages/**
+  - example
+scripts:
+  analyze:
+    run: fvm dart run melos exec --concurrency=1 -- "fvm flutter analyze"
+    description: Analyze all packages and the example.
+  test:
+    run: fvm dart run melos exec --concurrency=1 --dir-exists=test -- "fvm flutter test"
+    description: Run Dart and Flutter tests.

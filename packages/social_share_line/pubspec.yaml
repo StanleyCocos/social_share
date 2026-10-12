@@ -1,0 +1,22 @@
+name: social_share_line
+description: Legacy Line native sharing for Flutter.
+version: 0.0.1
+environment:
+  sdk: ^3.10.9
+  flutter: '>=3.38.10'
+dependencies:
+  flutter:
+    sdk: flutter
+  social_share_core: ^0.0.1
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.addcn.social_share_line
+        pluginClass: SocialShareLinePlugin
+      ios:
+        pluginClass: SocialShareLinePlugin

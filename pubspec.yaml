@@ -1,0 +1,6 @@
+name: social_share_bridge
+publish_to: none
+environment:
+  sdk: ^3.10.9
+dev_dependencies:
+  melos: ^6.3.3

@@ -1,0 +1,19 @@
+name: social_share_example
+description: Manual verification of the migrated Facebook and LINE implementations.
+publish_to: none
+version: 1.0.0+1
+environment:
+  sdk: ^3.10.9
+dependencies:
+  flutter:
+    sdk: flutter
+  social_share_facebook:
+    path: ../packages/social_share_facebook
+  social_share_line:
+    path: ../packages/social_share_line
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+flutter:
+  uses-material-design: true
